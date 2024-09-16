@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  springboot-app:
+    build:
+      context: /home/isabella-campos/vivo/vivinho-streams
+      dockerfile: Dockerfile
+    container_name: springboot-app
+    environment:
+      - SPRING_KAFKA_BOOTSTRAP_SERVERS=kafka:9092
+    ports:
+      - "8080:8080"
+    networks:
+      - vivo_network
+
+networks:
+  vivo_network:
+    external: true

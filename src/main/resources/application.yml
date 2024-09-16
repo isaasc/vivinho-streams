@@ -1,0 +1,13 @@
+spring:
+  kafka:
+    bootstrap-servers: kafka:9092
+    streams:
+      application-id: vivinho-streams-app
+      default-key-serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+      default-value-serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+      state-dir: /tmp/kafka-streams-state
+  cassandra:
+    contact-points: cassandra.us-east-2.amazonaws.com:9142
+    schema-action: NONE
+    port: 9042
+    keyspace-name: vivinho_users_keyspace
